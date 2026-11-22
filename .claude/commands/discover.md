@@ -61,4 +61,4 @@ After generating the rules, examples, and questions:
 
 
 
-Save the result to doc/specs/<feature>.md
+Save the result to docs/specs/<feature>.md

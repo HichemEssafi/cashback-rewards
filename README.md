@@ -125,7 +125,7 @@ Run `./mvnw test` for unit tests only, or `./mvnw verify` for unit + acceptance 
 
 ## Specifications
 
-Feature specifications live in `doc/specs/` and follow the **Example Mapping** format: rules, examples, and counter-examples. These specs drive both the acceptance tests and the TDD implementation.
+Feature specifications live in `docs/specs/` and follow the **Example Mapping** format: rules, examples, and counter-examples. These specs drive both the acceptance tests and the TDD implementation.
 
 | Spec File | Feature |
 |---|---|
@@ -177,7 +177,7 @@ The project includes a PostToolUse hook that automatically runs `mvn test` after
 
 **In-memory repositories for tests** — Acceptance tests use in-memory implementations of outbound ports, so they run fast without a database. Repository tests use `@DataJpaTest` with H2 in PostgreSQL compatibility mode.
 
-**Specs as the source of truth** — Feature specifications in `doc/specs/` define the contract. Acceptance tests verify the contract. Production code implements it. When specs change, tests change first.
+**Specs as the source of truth** — Feature specifications in `docs/specs/` define the contract. Acceptance tests verify the contract. Production code implements it. When specs change, tests change first.
 
 ## Useful Commands
 
@@ -194,7 +194,7 @@ The project includes a PostToolUse hook that automatically runs `mvn test` after
 ```bash
 claude                                   # Start a Claude Code session
 /discover "As a customer, I want..."     # Run Example Mapping on a user story
-/accept Rule1 @doc/specs/feature.md      # Write an acceptance test for a spec rule
+/accept Rule1 @docs/specs/feature.md      # Write an acceptance test for a spec rule
 /tdd ClassName#methodName                # Run one TDD cycle
 /review                                  # Review uncommitted changes
 ```

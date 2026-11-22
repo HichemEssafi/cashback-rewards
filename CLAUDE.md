@@ -34,6 +34,13 @@ Constructor injection only (no field @Autowired).
 @Valid on request bodies. 201 create, 200 query, 400 validation, 404 not found.
 Domain exceptions for business rule violations. Map to HTTP in controller only.
 Never swallow exceptions or leak infrastructure details.
+Request-shape errors (missing fields) are handled in the web adapter via Bean Validation
+(`@NotNull` on the request DTO) and `MethodArgumentNotValidException`. Business rules throw
+domain exceptions. Both map to 400 with `ErrorResponse(message)` in `CashbackExceptionHandler`.
+
+### Tests
+Acceptance tests are named `*IT` and run via `maven-failsafe-plugin` in `./mvnw verify`.
+`./mvnw test` runs unit tests only (`*Test`).
 
 ## Project Structure
 
